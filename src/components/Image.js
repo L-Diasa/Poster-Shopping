@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react"
+import React, {useContext} from "react"
 import PropTypes from "prop-types"
 
 import {Context} from "../Context"
@@ -9,10 +9,10 @@ function Image({className, img}) {
     const {toggleFavorite, addToCart, cartItems, removeFromCart} = useContext(Context)
     
     function heartIcon() {
-        if(img.isFavorite) {
-            return <i className="ri-heart-fill favorite" onClick={() => toggleFavorite(img.id)}></i>
-        } else if(hovered) {
-            return <i className="ri-heart-line favorite" onClick={() => toggleFavorite(img.id)}></i>
+        let heartMode = img.isFavorite ? "fill" : hovered ? "line" : ""
+        if (heartMode) {
+            return <i className={`ri-heart-${heartMode} favorite`} 
+                    onClick={() => toggleFavorite(img.id)}></i>
         }
     }
     

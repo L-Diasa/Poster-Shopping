@@ -10,8 +10,8 @@ function App() {
         <div>
             <Header />
             <Routes>
-                <Route exact path="/" element={<Photos />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route exact path="/Poster-Shopping" element={<Photos />} />
+                <Route path="/Poster-Shopping/cart" element={<Cart />} />
             </Routes>
         </div>
     )
